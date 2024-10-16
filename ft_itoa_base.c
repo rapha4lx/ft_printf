@@ -1,25 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rferro-d <rferro-d@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/15 18:11:41 by rferro-d          #+#    #+#             */
-/*   Updated: 2024/10/16 14:57:17 by rferro-d         ###   ########.fr       */
+/*   Created: 2024/10/16 15:11:42 by rferro-d          #+#    #+#             */
+/*   Updated: 2024/10/16 15:39:17 by rferro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include "ft_printf.h"
-
-int	ft_putstr(char *str)
-{
-	int	count;
-
-	if (str == NULL)
-		return (ft_putstr("(null)"));
-	count = ft_strlen(str);
-	write(1, str, count);
-	return (count);
-}
+//int	ft_itoa_base(unsigned int n, int base, char * base)
+//{
+	

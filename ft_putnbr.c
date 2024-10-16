@@ -6,15 +6,15 @@
 /*   By: rferro-d <rferro-d@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 18:40:23 by rferro-d          #+#    #+#             */
-/*   Updated: 2024/10/15 19:38:53 by rferro-d         ###   ########.fr       */
+/*   Updated: 2024/10/16 16:12:04 by rferro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	number_count(int n, long int *i)
 {
-	int	count;
+	int			count;
 	long int	number;
 
 	count = 0;
@@ -38,24 +38,20 @@ int	number_count(int n, long int *i)
 int	ft_putnbr(int n)
 {
 	long int	i;
-	char	*buff;
-	int	buff_size;
-	int	count;
+	char		*buff;
+	int			buff_size;
+	int			count;
 
 	i = 0;
 	buff_size = number_count(n, &i);
 	count = 0;
 	if (i == 0)
-	{
-		ft_putchar(48);
-		return (1);
-	}
-	buff = (char*)malloc(sizeof(char) * buff_size + 1);
+		return (ft_putchar(48));
+	buff = (char *)malloc(sizeof(char) * buff_size + 1);
 	if (buff == NULL)
 		return (0);
 	while (i != 0)
 	{
-		//buff[count] = (i / 10) + 48;
 		buff[buff_size - 1 - count] = (i % 10) + 48;
 		count++;
 		i /= 10;
@@ -67,4 +63,3 @@ int	ft_putnbr(int n)
 	free(buff);
 	return (buff_size);
 }
-

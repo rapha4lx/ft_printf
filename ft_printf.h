@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rferro-d <rferro-d@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/15 18:11:41 by rferro-d          #+#    #+#             */
-/*   Updated: 2024/10/16 14:57:17 by rferro-d         ###   ########.fr       */
+/*   Created: 2024/10/16 16:12:16 by rferro-d          #+#    #+#             */
+/*   Updated: 2024/10/16 16:26:57 by rferro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include "ft_printf.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+# include <stdlib.h>
+# include <stdarg.h>
+# include <stdio.h>
 
-int	ft_putstr(char *str)
-{
-	int	count;
+int	ft_putchar(char c);
+int	ft_putstr(char *str);
+int	ft_strlen(char *str);
 
-	if (str == NULL)
-		return (ft_putstr("(null)"));
-	count = ft_strlen(str);
-	write(1, str, count);
-	return (count);
-}
+int	ft_putnbr(int n);
+int	ft_putnbr_unsigned(unsigned int n);
+
+int	ft_printf(const char *format, ...);
+typedef int	(*t_func_ptr)(void *);
+#endif
