@@ -6,13 +6,13 @@
 /*   By: rferro-d <rferro-d@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 18:40:23 by rferro-d          #+#    #+#             */
-/*   Updated: 2024/10/16 16:12:04 by rferro-d         ###   ########.fr       */
+/*   Updated: 2024/10/16 19:28:40 by rferro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	number_count(int n, long int *i)
+static int	number_count(int n, long int *i)
 {
 	int			count;
 	long int	number;

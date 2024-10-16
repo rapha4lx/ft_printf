@@ -4,6 +4,9 @@ SRCS=ft_printf.c \
      ft_putchar.c \
      ft_putstr.c \
      ft_putnbr.c \
+     ft_putnbr_unsigned.c \
+     ft_pointer_address.c \
+     ft_putnbr_base.c \
      ft_strlen.c
 
 OBJS = $(SRCS:.c=.o)
@@ -35,7 +38,7 @@ run: re
 
 run2: re
 	clear
-	$(CC) $(FLAGS) main.c $(NAME) -l bsd
+	$(CC) main.c $(NAME) -l bsd
 	./a.out
 
 test: re

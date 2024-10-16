@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_unsigned.c                               :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rferro-d <rferro-d@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/16 15:44:47 by rferro-d          #+#    #+#             */
-/*   Updated: 2024/10/16 19:56:47 by rferro-d         ###   ########.fr       */
+/*   Created: 2024/10/16 20:00:21 by rferro-d          #+#    #+#             */
+/*   Updated: 2024/10/16 20:44:59 by rferro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	number_count(unsigned int n)
+static int	number_count(unsigned long int n)
 {
 	int	count;
 
@@ -21,13 +21,13 @@ static int	number_count(unsigned int n)
 		return (1);
 	while (n != 0)
 	{
-		n /= 10;
+		n /= 16;
 		count++;
 	}
 	return (count);
 }
 
-int	ft_putnbr_unsigned(unsigned int n)
+int	ft_putnbr_base(unsigned long int n, char *base)
 {
 	char	*buff;
 	int		buff_size;
@@ -42,9 +42,9 @@ int	ft_putnbr_unsigned(unsigned int n)
 		return (0);
 	while (n != 0)
 	{
-		buff[buff_size - 1 - count] = (n % 10) + 48;
+		buff[buff_size - 1 - count] = base[(n % 16)];
 		count++;
-		n /= 10;
+		n /= 16;
 	}
 	if (n < 0)
 		buff[0] = '-';

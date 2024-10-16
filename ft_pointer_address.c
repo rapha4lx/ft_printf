@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_pointer_address.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rferro-d <rferro-d@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/15 18:11:41 by rferro-d          #+#    #+#             */
-/*   Updated: 2024/10/16 20:45:12 by rferro-d         ###   ########.fr       */
+/*   Created: 2024/10/16 19:27:59 by rferro-d          #+#    #+#             */
+/*   Updated: 2024/10/16 20:45:09 by rferro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <unistd.h>
 
-int	ft_putstr(char *str)
+int	ft_print_pointer(void *ptr, char *base)
 {
 	int	count;
 
-	if (str == NULL)
-		return (ft_putstr("(null)"));
-	count = ft_strlen(str);
-	write(1, str, count);
+	count = 0;
+	if (ptr == 0)
+		return (ft_putstr("(nil)"));
+	count += ft_putstr("0x");
+	count += ft_putnbr_base((unsigned long int)ptr, base);
 	return (count);
 }
