@@ -6,7 +6,7 @@
 /*   By: rferro-d <rferro-d@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 15:44:47 by rferro-d          #+#    #+#             */
-/*   Updated: 2024/10/16 19:56:47 by rferro-d         ###   ########.fr       */
+/*   Updated: 2024/10/17 14:17:41 by rferro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,6 @@ int	ft_putnbr_unsigned(unsigned int n)
 		count++;
 		n /= 10;
 	}
-	if (n < 0)
-		buff[0] = '-';
 	buff[buff_size] = '\0';
 	ft_putstr(buff);
 	free(buff);
